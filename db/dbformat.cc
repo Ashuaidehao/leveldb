@@ -9,10 +9,14 @@
 
 #include "port/port.h"
 #include "util/coding.h"
+#include "leveldb/env.h"
+
 
 namespace leveldb {
 
 static uint64_t PackSequenceAndType(uint64_t seq, ValueType t) {
+  // Log(options_.info_log, "Ignoring error %s", seq);
+  printf("PackSequenceAndType seq: %d",seq);
   assert(seq <= kMaxSequenceNumber);
   assert(t <= kValueTypeForSeek);
   return (seq << 8) | t;
