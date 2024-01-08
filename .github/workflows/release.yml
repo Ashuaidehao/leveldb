@@ -73,6 +73,7 @@ jobs:
 
             - name: Show
               run: |
+                cd build
                 ls
 
 
