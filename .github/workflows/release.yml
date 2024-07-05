@@ -73,10 +73,10 @@ jobs:
                 --build "${{ env.CMAKE_BUILD_DIR }}"
                 --config "${{ env.CMAKE_BUILD_TYPE }}"
 
-            - name: Show
-              run: |
-                cd build
-                ll
+            # - name: Show
+            #   run: |
+            #     cd build
+            #     ls
 
             - name: upload Mac
               if: matrix.os == 'macos-latest'
