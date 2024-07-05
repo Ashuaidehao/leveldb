@@ -15,8 +15,8 @@ jobs:
                     # MSVC only works on Windows.
                     - os: ubuntu-latest
                       compiler: msvc
-                    - os: ubuntu-latest
-                      compiler: gcc
+                    # - os: ubuntu-latest
+                    #   compiler: gcc
                     - os: macos-latest
                       compiler: msvc
                     # Not testing with GCC on macOS.
@@ -78,25 +78,25 @@ jobs:
                 cd build
                 ll
 
-            - name: upload Mac
-              if: matrix.os == 'macos-latest'
-              uses: actions/upload-artifact@v4
-              with:
-                name: release-mac
-                path: build/*.dylib
+            # - name: upload Mac
+            #   if: matrix.os == 'macos-latest'
+            #   uses: actions/upload-artifact@v4
+            #   with:
+            #     name: release-mac
+            #     path: build/*.dylib
 
-            - name: upload Linux
-              if: matrix.os == 'ubuntu-latest'
-              uses: actions/upload-artifact@v4
-              with:
-                name: release-Linux
-                path: build/*.so
+            # - name: upload Linux
+            #   if: matrix.os == 'ubuntu-latest'
+            #   uses: actions/upload-artifact@v4
+            #   with:
+            #     name: release-Linux
+            #     path: build/*.so
 
-            - name: upload Windows
-              if: matrix.os == 'windows-latest'
-              uses: actions/upload-artifact@v4
-              with:
-                name: release-windows
-                path: build/Release/leveldb.dll
+            # - name: upload Windows
+            #   if: matrix.os == 'windows-latest'
+            #   uses: actions/upload-artifact@v4
+            #   with:
+            #     name: release-windows
+            #     path: build/Release/leveldb.dll
 
 
