@@ -15,8 +15,8 @@ jobs:
                     # MSVC only works on Windows.
                     - os: ubuntu-latest
                       compiler: msvc
-                    # - os: ubuntu-latest
-                    #   compiler: gcc
+                    - os: ubuntu-latest
+                      compiler: gcc
                     - os: macos-latest
                       compiler: msvc
                     # Not testing with GCC on macOS.
